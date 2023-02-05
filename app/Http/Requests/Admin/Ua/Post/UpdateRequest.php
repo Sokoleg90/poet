@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Post;
+namespace App\Http\Requests\Admin\Ua\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -28,9 +28,7 @@ class UpdateRequest extends FormRequest
             'content' => 'required|string',
             'preview_image' => 'nullable|file',
             'main_image' => 'nullable|file',
-            'category_id' => 'required|integer|exists:categories,id',
-            'tag_ids' => 'nullable|array',
-            'tag_ids.*' => 'nullable|integer|exists:tags,id',
+            'category_id' => 'required|integer|exists:ua_categories,id',
         ];
     }
     public function messages()
@@ -47,7 +45,6 @@ class UpdateRequest extends FormRequest
             'category_id.required' => 'Это поле обязательно для заполнения',
             'category_id.integer' => 'Id категории должен быть числом',
             'category_id.exists' => 'Id категории должен быть в базе данных',
-            'tag_ids.array' => 'Необходимо отправить массив данных'
         ];
     }
 }

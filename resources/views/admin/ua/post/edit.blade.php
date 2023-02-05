@@ -11,9 +11,9 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Главная</a></li>
-                            <li class="breadcrumb-item"><a href="{{route('admin.category.index')}}">Посты</a></li>
-                            <li class="breadcrumb-item active">Редактирование поста {{$post->title}}</li>
+                            <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Головна</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('admin.ua.post.index')}}">Вірші</a></li>
+                            <li class="breadcrumb-item active">Редагування вірша {{$post->title}}</li>
                         </ol>
                     </div><!--col -->
                 </div><!--/.row -->
@@ -29,11 +29,11 @@
                     <div class="col-12">
 
 
-                        <form action="{{route('admin.post.update', $post->id)}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('admin.ua.post.update', $post->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <div class="form-group w-25">
-                                <input type="text" class="form-control" name="title" placeholder="Название поста"
+                                <input type="text" class="form-control" name="title" placeholder="Назва вірша"
                                        value="{{old('title', $post->title)}}"
                                 >
                                 @error('title')
@@ -97,27 +97,13 @@
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>Теги</label>
-                                <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выберите теги" style="width: 100%;">
-                                    @foreach($tags as $tag)
-                                        <option {{is_array($post->tags->pluck('id')->toArray()) && in_array($tag->id, $post->tags->pluck('id')->toArray()) ? 'selected' : ''}} value="{{$tag->id}}">{{$tag->title}}</option>
-                                    @endforeach
-                                </select>
-                                @error('tag_ids')
-                                <div class="text-danger">{{$message}}</div>
-                                @enderror
-                            </div>
                             <div class="form-group mb-5">
-                                <input type="submit" class="btn btn-primary" value="Обновить">
+                                <input type="submit" class="btn btn-primary" value="Оновити">
                             </div>
                         </form>
-
                     </div><!--./col -->
                 </div><!--/.row -->
             </div><!--container-fluid -->
-
-
         </section>
         <!-- /.content -->
     </div>
