@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'ru_posts';
+    protected $table = 'ua_posts';
     protected $guarded = false;
 
     public function category()
