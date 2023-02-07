@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Main\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,50 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
+    Route::get('/', IndexController::class)->name('main.index');
+});
+//Posts
+//UA-lang
+Route::group(['namespace' => 'App\Http\Controllers\Ua', 'prefix' => 'ua'], function () {
+Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
+    Route::get('/', 'IndexController')->name('ua.post.index');
+    Route::get('/{post}', 'ShowController')->name('ua.post.show');
+
+    Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function () {
+        Route::post('/', 'StoreController')->name('ua.post.comment.store');
+    });
+});
+
+
+//Category
+Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
+    Route::get('/', 'IndexController')->name('ua.category.index');
+    Route::group(['namespace' => 'Post', 'prefix' => '{category}/posts'], function () {
+        Route::get('/', 'IndexController')->name('ua.category.post.index');
+    });
+});
+});
+//Blog RU-lang
+//Posts
+Route::group(['namespace' => 'App\Http\Controllers\Ru', 'prefix' => 'ru'], function () {
+    Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
+        Route::get('/', 'IndexController')->name('ru.post.index');
+        Route::get('/{post}', 'ShowController')->name('ru.post.show');
+
+        Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function () {
+            Route::post('/', 'StoreController')->name('ru.post.comment.store');
+        });
+    });
+
+    //Category
+    Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
+        Route::get('/', 'IndexController')->name('ru.category.index');
+        Route::group(['namespace' => 'Post', 'prefix' => '{category}/posts'], function () {
+            Route::get('/', 'IndexController')->name('ru.category.post.index');
+        });
+    });
+});
 
 //Admin
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
@@ -81,6 +126,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
         });
     });
 });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

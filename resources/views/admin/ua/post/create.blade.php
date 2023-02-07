@@ -7,13 +7,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Добавление поста</h1>
+                        <h1 class="m-0">Написання вірша</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Главная</a></li>
-                            <li class="breadcrumb-item"><a href="{{route('admin.post.index')}}">Посты</a></li>
-                            <li class="breadcrumb-item active">Создание поста</li>
+                            <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Головна</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('admin.ua.post.index')}}">Вірші</a></li>
+                            <li class="breadcrumb-item active">Написання вірша</li>
                         </ol>
                     </div><!--col -->
                 </div><!--/.row -->
@@ -25,14 +25,11 @@
             <div class="container-fluid">
                 <!--Small boxes (Start box) -->
                 <div class="row">
-
                     <div class="col-12">
-
-
-                        <form action="{{route('admin.post.store')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('admin.ua.post.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group w-25">
-                                <input type="text" class="form-control" name="title" placeholder="Название поста"
+                                <input type="text" class="form-control" name="title" placeholder="Назва вірша"
                                 value="{{old('title')}}"
                                 >
                             @error('title')
@@ -44,36 +41,6 @@
                                     {{old('content')}}
                                 </textarea>
                                 @error('content')
-                                <div class="text-danger">{{$message}}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group w-50">
-                                <label for="exampleInputFile">Добавить превью</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="preview_image">
-                                        <label class="custom-file-label">Выберите изображение</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Загрузка</span>
-                                    </div>
-                                </div>
-                                @error('preview_image')
-                                <div class="text-danger">{{$message}}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group w-50">
-                                <label for="exampleInputFile">Добавить главное изображение</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="main_image">
-                                        <label class="custom-file-label">Выберите изображение</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Загрузка</span>
-                                    </div>
-                                </div>
-                                @error('main_image')
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
@@ -90,19 +57,8 @@
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>Теги</label>
-                                <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выберите теги" style="width: 100%;">
-                                   @foreach($tags as $tag)
-                                        <option {{is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : ''}} value="{{$tag->id}}">{{$tag->title}}</option>
-                                    @endforeach
-                                </select>
-                                @error('tag_ids')
-                                <div class="text-danger">{{$message}}</div>
-                                @enderror
-                            </div>
                             <div class="form-group mb-5">
-                            <input type="submit" class="btn btn-primary" value="Добавить">
+                            <input type="submit" class="btn btn-primary" value="Додати">
                             </div>
                         </form>
 

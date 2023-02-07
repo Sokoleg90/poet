@@ -11,8 +11,8 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Главная</a></li>
-                            <li class="breadcrumb-item active">Посты</li>
+                            <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Головна</a></li>
+                            <li class="breadcrumb-item active">Вірші</li>
                         </ol>
                     </div><!--col -->
                 </div><!--/.row -->
@@ -25,7 +25,7 @@
                 <!--Small boxes (Start box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{route('admin.ua.post.create')}}" class="btn btn-block btn-primary">Добавить</a>
+                        <a href="{{route('admin.ua.post.create')}}" class="btn btn-block btn-primary">Додати</a>
                     </div>
                 </div>
                         <div class="row">
@@ -38,7 +38,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Название</th>
-                                        <th colspan="3" class="text-center">Действие</th>
+                                        <th colspan="3" class="text-center">Дія</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -46,10 +46,10 @@
                                     <tr>
                                         <td>{{$post->id}}</td>
                                         <td>{{$post->title}}</td>
-                                        <td><a href="{{route('admin.post.show', $post->id)}}"> <i class="fa-solid fa-eye"></i></a></td>
-                                        <td><a href="{{route('admin.post.edit', $post->id)}}" class="text-success"><i class="fa-solid fa-pencil"></i></a></td>
+                                        <td><a href="{{route('admin.ua.post.show', $post->id)}}"> <i class="fa-solid fa-eye"></i></a></td>
+                                        <td><a href="{{route('admin.ua.post.edit', $post->id)}}" class="text-success"><i class="fa-solid fa-pencil"></i></a></td>
                                         <td>
-                                            <form action="{{route('admin.post.destroy', $post->id)}}" method="POST">
+                                            <form action="{{route('admin.ua.post.destroy', $post->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="border-0 bg-transparent">

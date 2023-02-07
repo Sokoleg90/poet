@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Ru\Post;
 
-
-use App\Http\Requests\Admin\Post\UpdateRequest;
+use App\Http\Requests\Admin\Ru\Post\UpdateRequest;
 use App\Models\Ru\Post;
 
 
