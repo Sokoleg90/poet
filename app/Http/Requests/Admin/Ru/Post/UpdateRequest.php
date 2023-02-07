@@ -26,8 +26,6 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'required|string',
             'content' => 'required|string',
-            'preview_image' => 'nullable|file',
-            'main_image' => 'nullable|file',
             'category_id' => 'required|integer|exists:ru_categories,id',
         ];
     }
@@ -38,10 +36,6 @@ class UpdateRequest extends FormRequest
             'title.string' => 'Данные должны соответствовать строчному типу',
             'content.required' => 'Это поле обязательно для заполнения',
             'content.sting' => 'Это поле обязательно для заполнения',
-            'preview_image.required' => 'Это поле обязательно для заполнения',
-            'preview_image.file' => 'Необходимо выбрать файл',
-            'main_image.required' => 'Это поле обязательно для заполнения',
-            'main_image.file' => 'Необходимо выбрать файл',
             'category_id.required' => 'Это поле обязательно для заполнения',
             'category_id.integer' => 'Id категории должен быть числом',
             'category_id.exists' => 'Id категории должен быть в базе данных',

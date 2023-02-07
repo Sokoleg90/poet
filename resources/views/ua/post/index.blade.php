@@ -22,12 +22,13 @@
                             <div>
                                 {!! $post->content !!}
                             </div>
-
-                            <a href="single-post.html" class="btn btn-dafault btn-details">Continue Reading</a>
+                            <a href="{{route('ua.post.show', $post->id)}}" class="btn btn-dafault btn-details">Читати повністю</a>
                         </div>
                         @endforeach
                     </article>
-
+                    <div class="m-auto">
+                        {{$posts->links()}}
+                    </div>
                 </div>
                 <!-- Sidebar -->
                 <div class="col-md-4">
@@ -37,7 +38,7 @@
                             <ul>
                                 @foreach($categories as $category)
                                 <li>
-                                    <a href="{{route('ua.category.post.index', $category->id)}}">{{$category->title}}</a> <span class="badge"></span>
+                                    <a href="{{route('ua.category.post.index', $category->id)}}">{{$category->title}}</a> <span class="badge">{{$category->posts()->count()}}</span>
                                 </li>
                                 @endforeach
                             </ul>
@@ -62,25 +63,4 @@
         </div>
     </section>
 
-
-
-
-    <!--
-    ==================================================
-    Call To Action Section Start
-    ================================================== -->
-    <section id="call-to-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU THINK ?</h2>
-                        <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis,<br>possimus commodi, fugiat magnam temporibus vero magni recusandae? Dolore, maxime praesentium.</p>
-                        <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 @endsection

@@ -12,16 +12,16 @@
                             {!! $post->content !!}
                         </div>
                     </div>
-                </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="comments">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Коментарі ({{$post->comments->count()}})</h3>
+                        </div>
                         <div class="media">
-                            <a href="" class="pull-left">
-                                <img alt="" src="images/avater.jpg" class="media-object">
-                            </a>
                             <div class="media-body">
+                                @foreach($post->comments as $comment)
                                 <h4 class="media-heading">
                                     Jonathon Andrew</h4>
                                 <p class="text-muted">
@@ -143,31 +143,4 @@
             </div>
         </div>
     </section>
-
-
-
-
-    <!--
-    ==================================================
-    Call To Action Section Start
-    ================================================== -->
-    <section id="call-to-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT YOU
-                            THINK ?</h1>
-                            <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Lorem ipsum dolor
-                                sit amet, consectetur adipisicing elit. Nobis,<br>possimus commodi, fugiat magnam
-                                temporibus vero magni recusandae? Dolore, maxime praesentium.</p>
-                            <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown"
-                               data-wow-delay=".7s" data-wow-duration="500ms">Contact With Me</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
 @endsection
