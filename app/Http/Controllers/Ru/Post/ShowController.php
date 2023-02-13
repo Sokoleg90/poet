@@ -14,8 +14,7 @@ class ShowController extends Controller
     public function __invoke(Post $post)
     {
         $date = Carbon::parse($post->created_at);
-        $categories = Category::all();
-        $randomPosts = Post::get()->random(6);
-        return view('ru.post.show', compact('post', 'date', 'randomPosts', 'categories'));
+        Carbon::setLocale('ru_RU');
+        return view('ru.post.show', compact('post', 'date'));
     }
 }

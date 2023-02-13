@@ -37,7 +37,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mt-3">
-                                <textarea id="summernote" name="content">
+                                <textarea name="content" id="summernote">
                                     {{old('content')}}
                                 </textarea>
                                 @error('content')

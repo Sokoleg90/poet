@@ -1256,6 +1256,7 @@ article {
 #footer .copyright {
   font-size: 13px;
   margin-bottom: 0;
+    color: #fff;
 }
 
 #footer .copyright a {
@@ -1434,6 +1435,7 @@ px      68    160    252    */
     color: #333;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
+
 }
 
 /*		Wide Mobile Layout: 480px.
