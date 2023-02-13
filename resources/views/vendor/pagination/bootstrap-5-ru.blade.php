@@ -5,22 +5,22 @@
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link">@lang('Попередня')</span>
+                        <span class="page-link">@lang('Предыдущая')</span>
                     </li>
                 @else
                     <li class="page-item">
-                        <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">@lang('Попередня')</a>
+                        <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">@lang('Предыдущая')</a>
                     </li>
                 @endif
 
                 {{-- Next Page Link --}}
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
-                        <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('Наступна')</a>
+                        <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('Следующая')</a>
                     </li>
                 @else
                     <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link">@lang('Наступна')</span>
+                        <span class="page-link">@lang('Следующая')</span>
                     </li>
                 @endif
             </ul>
@@ -29,13 +29,13 @@
         <div class="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
             <div>
                 <p class="small text-muted">
-                    {!! __('Показано з') !!}
+                    {!! __('Показано с') !!}
                     <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
                     {!! __('по') !!}
                     <span class="fw-semibold">{{ $paginator->lastItem() }}</span>
-                    {!! __('із') !!}
+                    {!! __('из') !!}
                     <span class="fw-semibold">{{ $paginator->total() }}</span>
-                    {!! __('сторінок') !!}
+                    {!! __('страниц') !!}
                 </p>
             </div>
 

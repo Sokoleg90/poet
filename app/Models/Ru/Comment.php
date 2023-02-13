@@ -2,6 +2,7 @@
 
 namespace App\Models\Ru;
 
+
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

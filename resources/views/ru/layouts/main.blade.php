@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="icon" href="favicon.ico">
-    <title>Timer Agency Template</title>
+    <title>Poet in Ukraine</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -19,20 +19,20 @@
     <!-- Template CSS Files
     ================================================== -->
     <!-- Twitter Bootstrs CSS -->
-    <link rel="stylesheet" href="plugins1/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('plugins1/bootstrap/bootstrap.min.css')}}">
     <!-- Ionicons Fonts Css -->
-    <link rel="stylesheet" href="plugins1/ionicons/ionicons.min.css">
+    <link rel="stylesheet" href="{{asset('plugins1/ionicons/ionicons.min.css')}}">
     <!-- animate css -->
-    <link rel="stylesheet" href="plugins1/animate-css/animate.css">
+    <link rel="stylesheet" href="{{asset('plugins1/animate-css/animate.css')}}">
     <!-- Hero area slider css-->
-    <link rel="stylesheet" href="plugins1/slider/slider.css">
+    <link rel="stylesheet" href="{{asset('plugins1/slider/slider.css')}}">
     <!-- owl craousel css -->
-    <link rel="stylesheet" href="plugins1/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="plugins1/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="{{asset('plugins1/owl-carousel/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins1/owl-carousel/owl.theme.css')}}">
     <!-- Fancybox -->
-    <link rel="stylesheet" href="plugins1/facncybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="{{asset('plugins1/facncybox/jquery.fancybox.css')}}">
     <!-- template main css file -->
-    <link rel="stylesheet" href="css1/style.css">
+    <link rel="stylesheet" href="{{asset('css1/style.css')}}">
 </head>
 <body>
 
@@ -53,15 +53,46 @@ Header Section Start
             </button>
             <!-- /responsive nav button -->
 
-            <!-- logo -->
-            <div class="navbar-brand">
-                <a href="index.html" >
-                    <img src="images/logo.png" alt="">
-                </a>
-            </div>
-            <!-- /logo -->
         </div>
-        @yield('content')
+        <!-- main menu -->
+        <nav class="collapse navbar-collapse navbar-right" role="navigation">
+            <div class="main-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{route('ru.post.index')}}">Главная страница</a></li>
+                    <li><a href="{{route('ua.post.index')}}">Вірші українською мовою</a></li>
+                    <li><a href="{{route('ru.post.index')}}">Стихи на русском языке</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /main nav -->
+    </div>
+</header>
+<!--
+   ==================================================
+       Global Page Section Start
+   ================================================== -->
+<section class="global-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>Poet in Ukraine</h2><br>
+                    <h3>Oleg Sokolovskiy</h3>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{{route('ru.post.index')}}">
+                                <i class="ion-ios-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="active">Blog</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@yield('content')
 <!--
 ==================================================
 Footer Section Start
@@ -69,37 +100,8 @@ Footer Section Start
 <footer id="footer">
     <div class="container">
         <div class="col-md-8">
-            <p class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> Design and Developed by <a href="http://www.Themefisher.com" target="_blank">Themefisher</a>. <br>
-                Get More
-                <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">
-                    Free Bootstrap Templates
-                </a>
+            <p class="copyright">© poet.in.ua, All Right Reserved.
             </p>
-        </div>
-        <div class="col-md-4">
-            <!-- Social Media -->
-            <ul class="social">
-                <li>
-                    <a href="http://wwww.fb.com/themefisher" class="Facebook">
-                        <i class="ion-social-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://wwww.twitter.com/themefisher" class="Twitter">
-                        <i class="ion-social-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="Linkedin">
-                        <i class="ion-social-linkedin"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://wwww.fb.com/themefisher" class="Google Plus">
-                        <i class="ion-social-googleplus"></i>
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
 </footer> <!-- /#footer -->
@@ -107,21 +109,21 @@ Footer Section Start
 <!-- Template Javascript Files
 ================================================== -->
 <!-- jquery -->
-<script src="plugins1/jQurey/jquery.min.js"></script>
+<script src="{{asset('plugins1/jQurey/jquery.min.js')}}"></script>
 <!-- Form Validation -->
-<script src="plugins1/form-validation/jquery.form.js"></script>
-<script src="plugins1/form-validation/jquery.validate.min.js"></script>
+<script src="{{asset('plugins1/form-validation/jquery.form.js')}}"></script>
+<script src="{{asset('plugins1/form-validation/jquery.validate.min.js')}}"></script>
 <!-- owl carouserl js -->
-<script src="plugins1/owl-carousel/owl.carousel.min.js"></script>
+<script src="{{asset('plugins1/owl-carousel/owl.carousel.min.js')}}"></script>
 <!-- bootstrap js -->
-<script src="plugins1/bootstrap/bootstrap.min.js"></script>
+<script src="{{asset('plugins1/bootstrap/bootstrap.min.js')}}"></script>
 <!-- wow js -->
-<script src="plugins1/wow-js/wow.min.js"></script>
+<script src="{{asset('plugins1/wow-js/wow.min.js')}}"></script>
 <!-- slider js -->
-<script src="plugins1/slider/slider.js"></script>
+<script src="{{asset('plugins1/slider/slider.js')}}"></script>
 <!-- Fancybox -->
-<script src="plugins/facncybox/jquery.fancybox.js"></script>
+<script src="{{asset('plugins1/facncybox/jquery.fancybox.js')}}"></script>
 <!-- template main js -->
-<script src="js1/main.js"></script>
+<script src="{{asset('js1/main.js')}}"></script>
 </body>
 </html>
