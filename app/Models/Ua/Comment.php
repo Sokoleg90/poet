@@ -15,9 +15,4 @@ class Comment extends Model
     public function getDateAsCarbonAttribute(){
         return Carbon::parse($this->created_at);
     }
-
-    public function comments()
-    {
-        return $this->hasMany(\App\Models\Comment::class, 'post_id', 'id');
-    }
 }

@@ -15,12 +15,10 @@
                                 <a href="{{route('ua.post.show', $post->id)}}">{{$post->title}}</a>
                             </h2>
                             <div class="blog-meta">
-                                <span>Dec 11, 2020</span>
-                                <span>by <a href="">Admin</a></span>
-                                <span><a href="">business</a>,<a href="">people</a></span>
+                                <span>by Oleg Sokolovskiy </span>
                             </div>
                             <div>
-                                {!! $post->content !!}
+                                    {!! \Illuminate\Support\Str::words($post->content, 20, $end='...') !!}
                             </div>
                             <a href="{{route('ua.post.show', $post->id)}}" class="btn btn-dafault btn-details">Читати повністю</a>
                         </div>
@@ -50,11 +48,10 @@
                                 @foreach($randomPosts as $post)
                                 <li>
                                     <a href="{{route('ua.post.show', $post->id)}}">{{$post->title}}</a><br>
-                                    <time>16 May, 2015</time>
+                                    <span>by Oleg Sokolovskiy</span>
                                 </li>
                                 @endforeach
                             </ul>
-
                         </div>
 
                     </div>
